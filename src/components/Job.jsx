@@ -1,6 +1,7 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToFavAction } from "../redux/actions";
 
 const Job = ({ data }) => {
   const dispatch = useDispatch();
@@ -17,7 +18,8 @@ const Job = ({ data }) => {
           className="ms-5"
           variant="outline-danger"
           onClick={() => {
-            dispatch({ type: "ADD_TO_FAV", payload: data });
+            // dispatch({ type: "ADD_TO_FAV", payload: data });
+            dispatch(addToFavAction(data));
           }}
         >
           Add to Favourites
