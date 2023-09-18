@@ -10,13 +10,16 @@ const Job = ({ data }) => {
       <Col xs={3}>
         <Link to={`/${data.company_name}`}>{data.company_name}</Link>
       </Col>
-      <Col xs={9}>
+      <Col xs={7}>
         <a href={data.url} target="_blank" rel="noreferrer">
           {data.title}
         </a>
+      </Col>
+      <Col xs={2}>
         <Button
           className="ms-5"
           variant="outline-danger"
+          size="sm"
           onClick={() => {
             // dispatch({ type: "ADD_TO_FAV", payload: data });
             dispatch(addToFavAction(data));
